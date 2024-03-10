@@ -34,5 +34,15 @@ namespace Contacts.DomainTest
         {
             var contact = new Contact(firstName);
         }
+
+        [TestMethod, TestCategory("FirstName")]
+        public void FirstName_Retrieve()
+        {
+            var firstName = "Ahmad";
+            var contact = new Contact("Ahmad");
+            Assert.AreEqual(firstName, contact.FirstName);
+        }
+
+
     }
 }

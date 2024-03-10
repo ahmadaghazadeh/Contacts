@@ -11,10 +11,16 @@ namespace ContactContext.Domain.Contacts
             SetFirstName(firstName);
         }
 
+        public string FirstName { get; set; }
+
         private void SetFirstName(string firstName)
         {
             if (string.IsNullOrWhiteSpace(firstName))
                 throw new FirstNameInvalidFormatException();
+
+            this.FirstName = firstName;
         }
+
+     
     }
 }
