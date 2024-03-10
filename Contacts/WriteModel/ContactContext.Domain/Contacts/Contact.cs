@@ -19,6 +19,7 @@ namespace ContactContext.Domain.Contacts
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public List<string> Phones { get; set; }
 
         private void SetFirstName(string firstName)
         {
@@ -42,6 +43,8 @@ namespace ContactContext.Domain.Contacts
                 if (!checker.Check(phone))
                     throw new PhoneNumberInvalidFormatException();
             }
+
+            this.Phones = phones;
         }
 
     }

@@ -86,6 +86,20 @@ namespace Contacts.DomainTest
             InitContact(phones: phones);
         }
 
+        [TestMethod, TestCategory("Phones")]
+        public void Phones_Retrieve()
+        {
+            var phones = new List<string>()
+            {
+                "+989352185069",
+                "+989303977077",
+            };
+
+            var customer = InitContact(phones: phones);
+            
+            Assert.AreEqual(phones, customer.Phones);
+        }
+
 
 
 
