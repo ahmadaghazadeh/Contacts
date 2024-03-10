@@ -21,8 +21,7 @@ namespace ContactContext.Domain.Contacts
             SetLastName(lastName);
             SetPhones(phoneChecker,phones);
         }
-
-      
+        protected Contact(){}
 
 
         public string FirstName { get; set; }

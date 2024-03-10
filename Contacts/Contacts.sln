@@ -27,9 +27,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{212075E0-9
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EndPoints", "EndPoints", "{C9B795FB-0435-4E29-96E9-9F1A5790C14F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contacts.DomainTest", "Test\Contacts.DomainTest\Contacts.DomainTest.csproj", "{7D6F1F2C-9387-4D60-8D4D-4B9C030F82BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contacts.DomainTest", "Test\Contacts.DomainTest\Contacts.DomainTest.csproj", "{7D6F1F2C-9387-4D60-8D4D-4B9C030F82BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactContext.Domain", "WriteModel\ContactContext.Domain\ContactContext.Domain.csproj", "{26F69FCA-6DD8-4082-92A8-A79E3AF90392}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactContext.Domain", "WriteModel\ContactContext.Domain\ContactContext.Domain.csproj", "{26F69FCA-6DD8-4082-92A8-A79E3AF90392}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ContactContext", "ContactContext", "{C82D6251-2AB2-4E80-8BB4-0E107F4FA4F4}"
 EndProject
@@ -41,11 +41,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Facade", "Facade", "{09A1B4
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{66AE4AD5-7DA7-43B3-A450-5D653C6109CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactContext.Resource", "WriteModel\ContactContext.Resource\ContactContext.Resource.csproj", "{6AE9E313-3679-400E-A73A-58EE9C9AA6CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactContext.Resource", "WriteModel\ContactContext.Resource\ContactContext.Resource.csproj", "{6AE9E313-3679-400E-A73A-58EE9C9AA6CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactContext.Domain.Service", "WriteModel\Application\ContactContext.Domain.Service\ContactContext.Domain.Service.csproj", "{9B8B4F7C-AF71-498B-A840-EA9E3302038A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactContext.Domain.Service", "WriteModel\Application\ContactContext.Domain.Service\ContactContext.Domain.Service.csproj", "{9B8B4F7C-AF71-498B-A840-EA9E3302038A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsContext.Infrastructure", "WriteModel\ContactsContext.Infrastructure\ContactsContext.Infrastructure.csproj", "{BE25A9B0-DB1B-4219-A3DF-F1C8D22E6AB4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactsContext.Infrastructure", "WriteModel\ContactsContext.Infrastructure\ContactsContext.Infrastructure.csproj", "{BE25A9B0-DB1B-4219-A3DF-F1C8D22E6AB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactContext.Configuration", "WriteModel\ContactContext.Configuration\ContactContext.Configuration.csproj", "{540D70F9-0E1C-4116-B189-35B2808E0256}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "EndPoints\API\API.csproj", "{A428A74D-214E-46E1-91F4-33B6BAF91FB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -101,6 +105,14 @@ Global
 		{BE25A9B0-DB1B-4219-A3DF-F1C8D22E6AB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE25A9B0-DB1B-4219-A3DF-F1C8D22E6AB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE25A9B0-DB1B-4219-A3DF-F1C8D22E6AB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{540D70F9-0E1C-4116-B189-35B2808E0256}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{540D70F9-0E1C-4116-B189-35B2808E0256}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{540D70F9-0E1C-4116-B189-35B2808E0256}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{540D70F9-0E1C-4116-B189-35B2808E0256}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A428A74D-214E-46E1-91F4-33B6BAF91FB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A428A74D-214E-46E1-91F4-33B6BAF91FB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A428A74D-214E-46E1-91F4-33B6BAF91FB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A428A74D-214E-46E1-91F4-33B6BAF91FB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -123,6 +135,8 @@ Global
 		{6AE9E313-3679-400E-A73A-58EE9C9AA6CC} = {C82D6251-2AB2-4E80-8BB4-0E107F4FA4F4}
 		{9B8B4F7C-AF71-498B-A840-EA9E3302038A} = {0789F740-2DF8-445C-B2CA-7BCFC8967333}
 		{BE25A9B0-DB1B-4219-A3DF-F1C8D22E6AB4} = {66AE4AD5-7DA7-43B3-A450-5D653C6109CF}
+		{540D70F9-0E1C-4116-B189-35B2808E0256} = {C82D6251-2AB2-4E80-8BB4-0E107F4FA4F4}
+		{A428A74D-214E-46E1-91F4-33B6BAF91FB6} = {C9B795FB-0435-4E29-96E9-9F1A5790C14F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A500799B-F969-4EE4-8AF3-1FCE783C83AB}
