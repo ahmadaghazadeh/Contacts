@@ -1,4 +1,5 @@
 ﻿using ContactContext.Domain.Contacts.Exceptions;
+using ContactContext.Domain.Contacts.Services;
 using Framework.Core.Domain;
 using Framework.Domain;
 
@@ -6,12 +7,18 @@ namespace ContactContext.Domain.Contacts
 {
     public class Contact : EntityBase<Guid>, IAggregateRoot<Contact>
     {
-        public Contact(string firstName)
+        public Contact(IPhoneNumberFormatChecker checker,string firstName, string lastName, List<string> phones)
         {
             SetFirstName(firstName);
+            SetLastName(lastName);
+            SetPhones(checker,phones);
         }
 
+      
+
+
         public string FirstName { get; set; }
+        public string LastName { get; set; }
 
         private void SetFirstName(string firstName)
         {
@@ -20,7 +27,22 @@ namespace ContactContext.Domain.Contacts
 
             this.FirstName = firstName;
         }
+        private void SetLastName(string lastName)
+        {
+            if (string.IsNullOrWhiteSpace(lastName))
+                throw new LastNameInvalidFormatException();
 
-     
+            this.LastName = lastName;
+        }
+
+        private void SetPhones(IPhoneNumberFormatChecker checker,List<string> phones)
+        {
+            foreach (var phone in phones)
+            {
+                if (!checker.Check(phone))
+                    throw new PhoneNumberInvalidFormatException();
+            }
+        }
+
     }
 }

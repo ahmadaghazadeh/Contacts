@@ -120,4 +120,13 @@
   <data name="FirstNameInvalidFormatException" xml:space="preserve">
     <value>First Name Invalid Format Exception</value>
   </data>
+  <data name="FirstNameLastNameDuplicatedException" xml:space="preserve">
+    <value>FirstName and LastName are Duplicated Exception</value>
+  </data>
+  <data name="LastNameInvalidFormatException" xml:space="preserve">
+    <value>Last Name Invalid Format Exception</value>
+  </data>
+  <data name="PhoneNumberInvalidFormatException" xml:space="preserve">
+    <value>Phone Number Invalid Format Exception</value>
+  </data>
 </root>

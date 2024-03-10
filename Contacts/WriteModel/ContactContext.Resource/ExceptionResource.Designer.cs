@@ -68,5 +68,32 @@ namespace ContactContext.Resource {
                 return ResourceManager.GetString("FirstNameInvalidFormatException", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FirstName and LastName are Duplicated Exception.
+        /// </summary>
+        public static string FirstNameLastNameDuplicatedException {
+            get {
+                return ResourceManager.GetString("FirstNameLastNameDuplicatedException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last Name Invalid Format Exception.
+        /// </summary>
+        public static string LastNameInvalidFormatException {
+            get {
+                return ResourceManager.GetString("LastNameInvalidFormatException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone Number Invalid Format Exception.
+        /// </summary>
+        public static string PhoneNumberInvalidFormatException {
+            get {
+                return ResourceManager.GetString("PhoneNumberInvalidFormatException", resourceCulture);
+            }
+        }
     }
 }
