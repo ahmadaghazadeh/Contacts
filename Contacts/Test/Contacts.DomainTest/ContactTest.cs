@@ -12,7 +12,7 @@ namespace Contacts.DomainTest
         [TestMethod, TestCategory("Initialize")]
         public void ContactShouldEntityBase_Retrieve()
         {
-            var contact = new Contact("Ahmad");
+            var contact = InitContact();
 
             Assert.IsTrue(contact is EntityBase<Guid>);
         }
@@ -20,7 +20,7 @@ namespace Contacts.DomainTest
         [TestMethod, TestCategory("Initialize")]
         public void ContactShouldAggregateRoot_Retrieve()
         {
-            var contact = new Contact("Ahmad");
+            var contact = InitContact();
 
             Assert.IsTrue(contact is IAggregateRoot<Contact>);
         }
@@ -32,15 +32,21 @@ namespace Contacts.DomainTest
         [ExpectedException(typeof(FirstNameInvalidFormatException))]
         public void FirstNameIsEmpty_ThrowFirstNameRequiredException(string firstName)
         {
-            var contact = new Contact(firstName);
+            InitContact(firstName);
         }
 
         [TestMethod, TestCategory("FirstName")]
         public void FirstName_Retrieve()
         {
             var firstName = "Ahmad";
-            var contact = new Contact("Ahmad");
+            var contact = InitContact(firstName);
             Assert.AreEqual(firstName, contact.FirstName);
+        }
+
+        private Contact InitContact(
+            string firstName = "Ahmad")
+        {
+            return new Contact(firstName);
         }
 
 
