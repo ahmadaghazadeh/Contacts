@@ -1,4 +1,5 @@
-using ContactContext.Domain;
+using ContactContext.Domain.Contacts;
+using ContactContext.Domain.Contacts.Exceptions;
 using Framework.Core.Domain;
 using Framework.Domain;
 
@@ -11,7 +12,7 @@ namespace Contacts.DomainTest
         [TestMethod, TestCategory("Initialize")]
         public void ContactShouldEntityBase_Retrieve()
         {
-            var contact = new Contact();
+            var contact = new Contact("Ahmad");
 
             Assert.IsTrue(contact is EntityBase<Guid>);
         }
@@ -19,9 +20,19 @@ namespace Contacts.DomainTest
         [TestMethod, TestCategory("Initialize")]
         public void ContactShouldAggregateRoot_Retrieve()
         {
-            var contact = new Contact();
+            var contact = new Contact("Ahmad");
 
             Assert.IsTrue(contact is IAggregateRoot<Contact>);
+        }
+
+        [TestMethod, TestCategory("FirstName")]
+        [DataRow(null)]
+        [DataRow("")]
+        [DataRow(" ")]
+        [ExpectedException(typeof(FirstNameInvalidFormatException))]
+        public void FirstNameIsEmpty_ThrowFirstNameRequiredException(string firstName)
+        {
+            var contact = new Contact(firstName);
         }
     }
 }
