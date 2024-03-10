@@ -12,11 +12,14 @@ namespace Contacts.DomainTest
     {
         private readonly Mock<IPhoneNumberFormatChecker> phoneNumberChecker = new();
 
+        private readonly Mock<IFirstNameLastNameDuplicationChecker> firstNameLastNameDuplicationChecker = new();
+
 
         [TestInitialize]
         public void Initialize()
         {
             phoneNumberChecker.Setup(c => c.Check(It.IsAny<string>())).Returns(true);
+            firstNameLastNameDuplicationChecker.Setup(c => c.IsDuplicate(It.IsAny<string>(),It.IsAny<string>())).Returns(false);
         }
         [TestMethod, TestCategory("Initialize")]
         public void ContactShouldEntityBase_Retrieve()
@@ -100,6 +103,16 @@ namespace Contacts.DomainTest
             Assert.AreEqual(phones, customer.Phones);
         }
 
+        [TestMethod, TestCategory("Constraint")]
+        [ExpectedException(typeof(FirstNameLastNameDuplicatedException))]
+        public void FirstNameLastNameDuplicate_FirstNameLastNameDuplicatedException()
+        {
+            var firstName = "Ahmad";
+            var lastName = "Aghazadeh";
+
+            firstNameLastNameDuplicationChecker.Setup(c => c.IsDuplicate(firstName, lastName)).Returns(true);
+            InitContact(firstName: firstName, lastName: lastName);
+        }
 
 
 
@@ -116,7 +129,8 @@ namespace Contacts.DomainTest
                     "+989303977077",
                 };
             }
-            return new Contact(phoneNumberChecker.Object,firstName, lastName, phones);
+            return new Contact(phoneNumberChecker.Object,
+            firstNameLastNameDuplicationChecker.Object, firstName, lastName, phones);
         }
     }
 }

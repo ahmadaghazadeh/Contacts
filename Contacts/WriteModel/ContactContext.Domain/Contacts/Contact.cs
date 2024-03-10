@@ -7,11 +7,19 @@ namespace ContactContext.Domain.Contacts
 {
     public class Contact : EntityBase<Guid>, IAggregateRoot<Contact>
     {
-        public Contact(IPhoneNumberFormatChecker checker,string firstName, string lastName, List<string> phones)
+        public Contact(IPhoneNumberFormatChecker phoneChecker,
+            IFirstNameLastNameDuplicationChecker firstNameLastNameDuplicationChecker,
+            string firstName,
+            string lastName,
+            List<string> phones)
         {
+
+            if (firstNameLastNameDuplicationChecker.IsDuplicate(firstName, lastName))
+                throw new FirstNameLastNameDuplicatedException();
+
             SetFirstName(firstName);
             SetLastName(lastName);
-            SetPhones(checker,phones);
+            SetPhones(phoneChecker,phones);
         }
 
       
