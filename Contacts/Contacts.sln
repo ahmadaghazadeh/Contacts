@@ -47,17 +47,35 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactContext.Domain.Servi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactsContext.Infrastructure", "WriteModel\ContactsContext.Infrastructure\ContactsContext.Infrastructure.csproj", "{BE25A9B0-DB1B-4219-A3DF-F1C8D22E6AB4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactContext.Configuration", "WriteModel\ContactContext.Configuration\ContactContext.Configuration.csproj", "{540D70F9-0E1C-4116-B189-35B2808E0256}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactContext.Configuration", "WriteModel\ContactContext.Configuration\ContactContext.Configuration.csproj", "{540D70F9-0E1C-4116-B189-35B2808E0256}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "EndPoints\API\API.csproj", "{A428A74D-214E-46E1-91F4-33B6BAF91FB6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "EndPoints\API\API.csproj", "{A428A74D-214E-46E1-91F4-33B6BAF91FB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactContext.Application", "WriteModel\ContactContext.Application\ContactContext.Application.csproj", "{C56D537E-7134-4BE5-B54B-C57BC6E68477}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactContext.Application", "WriteModel\ContactContext.Application\ContactContext.Application.csproj", "{C56D537E-7134-4BE5-B54B-C57BC6E68477}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactContext.Application.Contract", "WriteModel\ContactContext.Application.Contract\ContactContext.Application.Contract.csproj", "{27618116-95AB-4EAF-8129-090E17A0D62E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactContext.Application.Contract", "WriteModel\ContactContext.Application.Contract\ContactContext.Application.Contract.csproj", "{27618116-95AB-4EAF-8129-090E17A0D62E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactContext.Facade", "WriteModel\ContactContext.Facade\ContactContext.Facade.csproj", "{454C740D-BECE-48D5-9916-807C9514492E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactContext.Facade", "WriteModel\ContactContext.Facade\ContactContext.Facade.csproj", "{454C740D-BECE-48D5-9916-807C9514492E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactContext.Facade.Contract", "WriteModel\ContactContext.Facade.Contract\ContactContext.Facade.Contract.csproj", "{ED9D369A-0A79-42C7-9F9B-06A5BA040640}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactContext.Facade.Contract", "WriteModel\ContactContext.Facade.Contract\ContactContext.Facade.Contract.csproj", "{ED9D369A-0A79-42C7-9F9B-06A5BA040640}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{F2271715-51E7-4322-99FD-8E430B294AF3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Facade", "Facade", "{1BDAF6B6-C2CF-49E5-ABF2-14F10247F4FA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{2582AC07-D096-4FCB-AD74-6094A6598867}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadModel.Application", "ReadModel\ReadModel.Application\ReadModel.Application.csproj", "{BFEF6068-FCF4-4B76-BFFC-9FAEE8B8AE60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadModel.Application.Contract", "ReadModel\ReadModel.Application.Contract\ReadModel.Application.Contract.csproj", "{1DF91043-8711-4946-BC86-F371EFE00DDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadModel.Facade", "ReadModel\ReadModel.Facade\ReadModel.Facade.csproj", "{A70C6AA7-5999-47CB-9A0A-1CD0DD2CDA09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadModel.Facade.Contract", "ReadModel\ReadModel.Facade.Contract\ReadModel.Facade.Contract.csproj", "{4B2D6D5E-FD30-4BDB-B5D9-396A5ABE74F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadModel.Infrastructure", "ReadModel\ReadModel.Infrastructure\ReadModel.Infrastructure.csproj", "{FC5EE0CC-5395-4188-82E3-3A0AACE7AB4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactContext.Domain.Contract", "WriteModel\ContactContext.Domain.Contract\ContactContext.Domain.Contract.csproj", "{0D97DA3A-1093-4F12-AB43-2F5ABD0C8DBB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -137,6 +155,30 @@ Global
 		{ED9D369A-0A79-42C7-9F9B-06A5BA040640}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED9D369A-0A79-42C7-9F9B-06A5BA040640}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED9D369A-0A79-42C7-9F9B-06A5BA040640}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFEF6068-FCF4-4B76-BFFC-9FAEE8B8AE60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFEF6068-FCF4-4B76-BFFC-9FAEE8B8AE60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFEF6068-FCF4-4B76-BFFC-9FAEE8B8AE60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFEF6068-FCF4-4B76-BFFC-9FAEE8B8AE60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DF91043-8711-4946-BC86-F371EFE00DDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DF91043-8711-4946-BC86-F371EFE00DDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DF91043-8711-4946-BC86-F371EFE00DDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DF91043-8711-4946-BC86-F371EFE00DDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A70C6AA7-5999-47CB-9A0A-1CD0DD2CDA09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A70C6AA7-5999-47CB-9A0A-1CD0DD2CDA09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A70C6AA7-5999-47CB-9A0A-1CD0DD2CDA09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A70C6AA7-5999-47CB-9A0A-1CD0DD2CDA09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B2D6D5E-FD30-4BDB-B5D9-396A5ABE74F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B2D6D5E-FD30-4BDB-B5D9-396A5ABE74F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B2D6D5E-FD30-4BDB-B5D9-396A5ABE74F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B2D6D5E-FD30-4BDB-B5D9-396A5ABE74F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC5EE0CC-5395-4188-82E3-3A0AACE7AB4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC5EE0CC-5395-4188-82E3-3A0AACE7AB4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC5EE0CC-5395-4188-82E3-3A0AACE7AB4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC5EE0CC-5395-4188-82E3-3A0AACE7AB4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D97DA3A-1093-4F12-AB43-2F5ABD0C8DBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D97DA3A-1093-4F12-AB43-2F5ABD0C8DBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D97DA3A-1093-4F12-AB43-2F5ABD0C8DBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D97DA3A-1093-4F12-AB43-2F5ABD0C8DBB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -165,6 +207,15 @@ Global
 		{27618116-95AB-4EAF-8129-090E17A0D62E} = {BDF8DA0D-D90F-4A7D-AB60-D879B78B45BC}
 		{454C740D-BECE-48D5-9916-807C9514492E} = {09A1B457-A049-46FF-8231-87B7D0FCAE37}
 		{ED9D369A-0A79-42C7-9F9B-06A5BA040640} = {09A1B457-A049-46FF-8231-87B7D0FCAE37}
+		{F2271715-51E7-4322-99FD-8E430B294AF3} = {AAA61401-C76B-4055-80F9-ABB4227FFD59}
+		{1BDAF6B6-C2CF-49E5-ABF2-14F10247F4FA} = {AAA61401-C76B-4055-80F9-ABB4227FFD59}
+		{2582AC07-D096-4FCB-AD74-6094A6598867} = {AAA61401-C76B-4055-80F9-ABB4227FFD59}
+		{BFEF6068-FCF4-4B76-BFFC-9FAEE8B8AE60} = {F2271715-51E7-4322-99FD-8E430B294AF3}
+		{1DF91043-8711-4946-BC86-F371EFE00DDC} = {F2271715-51E7-4322-99FD-8E430B294AF3}
+		{A70C6AA7-5999-47CB-9A0A-1CD0DD2CDA09} = {1BDAF6B6-C2CF-49E5-ABF2-14F10247F4FA}
+		{4B2D6D5E-FD30-4BDB-B5D9-396A5ABE74F6} = {1BDAF6B6-C2CF-49E5-ABF2-14F10247F4FA}
+		{FC5EE0CC-5395-4188-82E3-3A0AACE7AB4E} = {2582AC07-D096-4FCB-AD74-6094A6598867}
+		{0D97DA3A-1093-4F12-AB43-2F5ABD0C8DBB} = {0789F740-2DF8-445C-B2CA-7BCFC8967333}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A500799B-F969-4EE4-8AF3-1FCE783C83AB}

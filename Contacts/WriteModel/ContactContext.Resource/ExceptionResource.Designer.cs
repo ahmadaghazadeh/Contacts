@@ -88,11 +88,29 @@ namespace ContactContext.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Phone Numbers are Duplicate Exception.
+        /// </summary>
+        public static string PhoneNumberDuplicateException {
+            get {
+                return ResourceManager.GetString("PhoneNumberDuplicateException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Phone Number Invalid Format Exception.
         /// </summary>
         public static string PhoneNumberInvalidFormatException {
             get {
                 return ResourceManager.GetString("PhoneNumberInvalidFormatException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone Type Invalid Format Exception.
+        /// </summary>
+        public static string PhoneTypeInvalidFormatException {
+            get {
+                return ResourceManager.GetString("PhoneTypeInvalidFormatException", resourceCulture);
             }
         }
     }

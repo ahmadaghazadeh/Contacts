@@ -1,6 +1,5 @@
 ﻿using ContactContext.Application.Contract.Contacts;
 using ContactContext.Facade.Contract.Contacts;
-using CustomerContext.Application.Contract.Customers;
 using Framework.Facade;
 using MediatR;
 

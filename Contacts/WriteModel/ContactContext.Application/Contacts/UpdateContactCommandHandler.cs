@@ -1,8 +1,8 @@
-﻿using ContactContext.Domain.Contacts.Services;
-using CustomerContext.Application.Contract.Customers;
+﻿using ContactContext.Application.Contract.Contacts;
+using ContactContext.Domain.Contacts.Services;
 using Framework.Core.Application;
 
-namespace CustomerContext.Application.Customers
+namespace ContactContext.Application.Contacts
 {
     public class UpdateContactCommandHandler : ICommandHandler<UpdateContactCommand>
     {

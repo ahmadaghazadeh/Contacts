@@ -1,7 +1,6 @@
 ﻿
 
 using ContactContext.Application.Contract.Contacts;
-using CustomerContext.Application.Contract.Customers;
 
 namespace ContactContext.Facade.Contract.Contacts
 {

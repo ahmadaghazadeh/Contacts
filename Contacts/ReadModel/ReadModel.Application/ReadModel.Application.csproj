@@ -8,7 +8,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Framework\Framework.Core\Framework.Core.csproj" />
-    <ProjectReference Include="..\ContactContext.Domain.Contract\ContactContext.Domain.Contract.csproj" />
+    <ProjectReference Include="..\ReadModel.Application.Contract\ReadModel.Application.Contract.csproj" />
+    <ProjectReference Include="..\ReadModel.Infrastructure\ReadModel.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

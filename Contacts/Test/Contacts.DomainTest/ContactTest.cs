@@ -1,3 +1,4 @@
+using ContactContext.Application.Contract.Contacts;
 using ContactContext.Domain.Contacts;
 using ContactContext.Domain.Contacts.Exceptions;
 using ContactContext.Domain.Contacts.Services;
@@ -77,30 +78,48 @@ namespace Contacts.DomainTest
         }
 
         [TestMethod, TestCategory("Phones")]
-        [ExpectedException(typeof(PhoneNumberInvalidFormatException))]
-        public void PhonesIsInvalid_ThrowPhoneNumberInvalidFormatException()
+        [ExpectedException(typeof(PhoneNumberDuplicateException))]
+        public void PhonesIsInvalid_ThrowPhoneNumberDuplicateException()
         {
-            var phones= new List<string>()
+            var phones= new List<PhoneDto>()
             {
-                "+989352185069",
-                "+989303977077",
+                new PhoneDto()
+                {
+	                Type = "Mobile",
+	                Number = "+989352185069"
+				},
+                new PhoneDto()
+                {
+	                Type = "Mobile",
+	                Number = "+989352185069"
+				} 
             };
-            phoneNumberChecker.Setup(c => c.Check( It.IsAny<string>() )).Returns(false);
             InitContact(phones: phones);
         }
 
         [TestMethod, TestCategory("Phones")]
         public void Phones_Retrieve()
         {
-            var phones = new List<string>()
-            {
-                "+989352185069",
-                "+989303977077",
-            };
+			var phones = new List<PhoneDto>()
+			{
+				new PhoneDto()
+				{
+					Type = "Mobile",
+					Number = "+989352185069"
+				},
+				new PhoneDto()
+				{
+					Type = "Mobile",
+					Number = "+09303977077"
+				}
+			};
 
-            var customer = InitContact(phones: phones);
-            
-            Assert.AreEqual(phones, customer.Phones);
+			var contact = InitContact(phones: phones);
+
+			Assert.IsTrue(contact.Phones.Any(c => c.Number == phones[0].Number));
+			Assert.IsTrue(contact.Phones.Any(c => c.Number == phones[1].Number));
+
+			Assert.AreEqual(phones.Count, contact.Phones.Count);
         }
 
         [TestMethod, TestCategory("Constraint")]
@@ -119,16 +138,24 @@ namespace Contacts.DomainTest
         private Contact InitContact(
             string firstName = "Ahmad",
             string lastName = "Aghazadeh",
-            List<string> phones =default)
+            List<PhoneDto> phones =default)
         {
             if (phones == default)
             {
-                phones = new List<string>()
-                {
-                    "+989352185069",
-                    "+989303977077",
-                };
-            }
+				phones = new List<PhoneDto>()
+				{
+					new PhoneDto()
+					{
+						Type = "Mobile",
+						Number = "+989352185069"
+					},
+					new PhoneDto()
+					{
+						Type = "Mobile",
+						Number = "+09303977077"
+					}
+				};
+			}
             return new Contact(phoneNumberChecker.Object,
             firstNameLastNameDuplicationChecker.Object, firstName, lastName, phones);
         }

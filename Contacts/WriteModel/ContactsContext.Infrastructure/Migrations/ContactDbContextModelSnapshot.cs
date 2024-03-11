@@ -35,16 +35,44 @@ namespace ContactsContext.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("Phones")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
                     b.HasIndex("FirstName", "LastName")
                         .IsUnique();
 
                     b.ToTable("Contact", "Domain");
+                });
+
+            modelBuilder.Entity("ContactContext.Domain.Contacts.Contact", b =>
+                {
+                    b.OwnsMany("ContactContext.Domain.Contacts.Phone", "Phones", b1 =>
+                        {
+                            b1.Property<Guid>("ContactId")
+                                .HasColumnType("uniqueidentifier");
+
+                            b1.Property<int>("Id")
+                                .ValueGeneratedOnAdd()
+                                .HasColumnType("int");
+
+                            SqlServerPropertyBuilderExtensions.UseIdentityColumn(b1.Property<int>("Id"));
+
+                            b1.Property<string>("Number")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(max)");
+
+                            b1.Property<string>("Type")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(max)");
+
+                            b1.HasKey("ContactId", "Id");
+
+                            b1.ToTable("Phone", "Domain");
+
+                            b1.WithOwner()
+                                .HasForeignKey("ContactId");
+                        });
+
+                    b.Navigation("Phones");
                 });
 #pragma warning restore 612, 618
         }

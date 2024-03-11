@@ -6,6 +6,6 @@ namespace ContactContext.Application.Contract.Contacts
     {
         public string FirstName { get;  set; }
         public string LastName { get;  set; }
-        public List<string> Phones { get;  set; }
+        public List<PhoneDto> Phones { get;  set; }
     }
 }

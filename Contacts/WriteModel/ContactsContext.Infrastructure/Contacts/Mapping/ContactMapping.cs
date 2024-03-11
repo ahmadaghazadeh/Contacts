@@ -1,7 +1,8 @@
 ﻿using ContactContext.Domain.Contacts;
 using Framework.Persistence;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Newtonsoft.Json;
 
 namespace ContactsContext.Infrastructure.Contacts.Mapping
@@ -15,12 +16,13 @@ namespace ContactsContext.Infrastructure.Contacts.Mapping
 
             builder.Property(c => c.LastName).IsRequired();
 
-            builder.Property(c => c.Phones)
-                .HasConversion(new ValueConverter<List<string>, string>(
-                    v => JsonConvert.SerializeObject(v), // Convert to string for persistence
-                    v => JsonConvert.DeserializeObject<List<string>>(v))); // C
+            builder.OwnsMany(c => c.Phones, p =>
+            {
+	            p.Property(p1 => p1.Number);
+	            p.Property(p1 => p1.Type);
+			});
 
-            builder.HasIndex(e => new { e.FirstName, e.LastName }).IsUnique();
+			builder.HasIndex(e => new { e.FirstName, e.LastName }).IsUnique();
 
         }
     }

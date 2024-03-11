@@ -1,4 +1,5 @@
-﻿using ContactContext.Domain.Contacts.Exceptions;
+﻿using ContactContext.Application.Contract.Contacts;
+using ContactContext.Domain.Contacts.Exceptions;
 using ContactContext.Domain.Contacts.Services;
 using Framework.Core.Domain;
 using Framework.Domain;
@@ -11,7 +12,7 @@ namespace ContactContext.Domain.Contacts
             IFirstNameLastNameDuplicationChecker firstNameLastNameDuplicationChecker,
             string firstName,
             string lastName,
-            List<string> phones) : base(Guid.NewGuid())
+            List<PhoneDto> phones) : base(Guid.NewGuid())
         {
 
             if (firstNameLastNameDuplicationChecker.IsDuplicate(firstName, lastName))
@@ -26,7 +27,7 @@ namespace ContactContext.Domain.Contacts
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public List<string> Phones { get; set; }
+        public List<Phone> Phones { get; set; }
 
         private void SetFirstName(string firstName)
         {
@@ -43,15 +44,18 @@ namespace ContactContext.Domain.Contacts
             this.LastName = lastName;
         }
 
-        public void SetPhones(IPhoneNumberFormatChecker checker,List<string> phones)
+        public void SetPhones(IPhoneNumberFormatChecker checker,List<PhoneDto> phones)
         {
-            foreach (var phone in phones)
-            {
-                if (!checker.Check(phone))
-                    throw new PhoneNumberInvalidFormatException();
-            }
+	        var isDuplicated = phones.GroupBy(x => x.Number)
+		        .Where(group => group.Count() > 1)
+		        .Select(group => group.Key);
 
-            this.Phones = phones;
+	        if (isDuplicated.Any())
+		        throw new PhoneNumberDuplicateException();
+
+	        var phonesList = phones.Select(p => new Phone(checker,p.Type, p.Number)).ToList();
+
+			this.Phones = phonesList;
         }
 
     }

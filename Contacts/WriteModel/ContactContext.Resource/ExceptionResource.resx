@@ -126,7 +126,13 @@
   <data name="LastNameInvalidFormatException" xml:space="preserve">
     <value>Last Name Invalid Format Exception</value>
   </data>
+  <data name="PhoneNumberDuplicateException" xml:space="preserve">
+    <value>Phone Numbers are Duplicate Exception</value>
+  </data>
   <data name="PhoneNumberInvalidFormatException" xml:space="preserve">
     <value>Phone Number Invalid Format Exception</value>
+  </data>
+  <data name="PhoneTypeInvalidFormatException" xml:space="preserve">
+    <value>Phone Type Invalid Format Exception</value>
   </data>
 </root>

@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Framework\Framework.Domain\Framework.Domain.csproj" />
+    <ProjectReference Include="..\ContactContext.Domain.Contract\ContactContext.Domain.Contract.csproj" />
     <ProjectReference Include="..\ContactContext.Resource\ContactContext.Resource.csproj" />
   </ItemGroup>
 
