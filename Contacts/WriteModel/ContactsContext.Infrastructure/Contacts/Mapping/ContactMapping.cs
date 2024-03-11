@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 namespace ContactsContext.Infrastructure.Contacts.Mapping
 {
-    public class CustomerMapping : EntityMappingBase<Contact>
+    public class ContactMapping : EntityMappingBase<Contact>
     {
         public override void Configure(EntityTypeBuilder<Contact> builder)
         {

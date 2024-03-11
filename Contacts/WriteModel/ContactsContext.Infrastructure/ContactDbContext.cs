@@ -17,7 +17,7 @@ namespace ContactsContext.Infrastructure
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.RegisterAllEntities<IEntityBase>(typeof(Contact).Assembly);
-            modelBuilder.RegisterEntityMappings(typeof(CustomerMapping).Assembly);
+            modelBuilder.RegisterEntityMappings(typeof(ContactMapping).Assembly);
         }
 
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)

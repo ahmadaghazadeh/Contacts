@@ -15,9 +15,9 @@ namespace ContactContext.Application.Contacts
         }
         public Task Handle(DeleteContactCommand request, CancellationToken cancellationToken)
         {
-            var customer = contactRepository.GeFirstNameLastName(request.FirstName,request.LastName);
+            var contact = contactRepository.GeFirstNameLastName(request.FirstName,request.LastName);
 
-            contactRepository.Delete(customer);
+            contactRepository.Delete(contact);
 
             return Task.CompletedTask;
         }

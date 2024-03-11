@@ -21,16 +21,16 @@ namespace ContactsContext.Infrastructure.Contacts
 
         public Contact GetById(Guid id)
         {
-            var customer = Set
+            var contact = Set
                 .Single(inc => inc.Id == id);
-            return customer;
+            return contact;
         }
         // This thing doesn't correct in the real business.
         public Contact GeFirstNameLastName(string firstName, string lastName)
         {
-            var customer = Set
+            var contact = Set
                 .Single(inc => inc.FirstName == firstName && inc.LastName==lastName);
-            return customer;
+            return contact;
         }
 
         public void Delete(Contact contact)

@@ -1,6 +1,9 @@
 using ContactContext.Application.Contract.Contacts;
 using ContactContext.Facade.Contract.Contacts;
 using Microsoft.AspNetCore.Mvc;
+using ReadModel.Application.Contract.Contacts;
+using ReadModel.Application.Contract.Contacts.Dto;
+using ReadModel.Facade.Contacts;
 
 namespace API.Controllers
 {
@@ -9,11 +12,13 @@ namespace API.Controllers
     public class ContactController : ControllerBase
     {
         private readonly IContactCommandFacade _contactCommandFacade;
+        private readonly IContactsQueryFacade _contactQueryFacade;
 
-        public ContactController(IContactCommandFacade contactCommandFacade)
-        {
-            this._contactCommandFacade = contactCommandFacade;
-        }
+		public ContactController(IContactCommandFacade contactCommandFacade, IContactsQueryFacade contactQueryFacade)
+		{
+			_contactCommandFacade = contactCommandFacade;
+			_contactQueryFacade = contactQueryFacade;
+		}
  
 
         [HttpPost]
@@ -42,5 +47,12 @@ namespace API.Controllers
             return Ok();
         }
 
-    }
+        [HttpGet]
+        public async Task<List<ContactDto>> GetAllContacts()
+        {
+	        var command = new GetAllContactsQuery();
+	        return await _contactQueryFacade.GetAllContractsAsync(command);
+        }
+
+	}
 }

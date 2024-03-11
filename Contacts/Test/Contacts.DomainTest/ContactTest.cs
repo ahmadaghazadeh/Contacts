@@ -73,8 +73,8 @@ namespace Contacts.DomainTest
         public void LastName_Retrieve()
         {
             var LastName = "Aghazadeh";
-            var customer = InitContact(lastName: LastName);
-            Assert.AreEqual(LastName, customer.LastName);
+            var contact = InitContact(lastName: LastName);
+            Assert.AreEqual(LastName, contact.LastName);
         }
 
         [TestMethod, TestCategory("Phones")]

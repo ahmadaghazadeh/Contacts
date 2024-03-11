@@ -1,5 +1,6 @@
 ﻿
 using MediatR;
+using ReadModel.Application.Contract.Contacts.Dto;
 
 namespace ReadModel.Application.Contract.Contacts
 {

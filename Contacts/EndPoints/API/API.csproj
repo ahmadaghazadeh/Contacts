@@ -20,6 +20,11 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Framework\Framework.Domain\Framework.Domain.csproj" />
     <ProjectReference Include="..\..\Framework\Framework.MediatR\Framework.MediatR.csproj" />
+    <ProjectReference Include="..\..\ReadModel\ReadModel.Application.Contract\ReadModel.Application.Contract.csproj" />
+    <ProjectReference Include="..\..\ReadModel\ReadModel.Application\ReadModel.Application.csproj" />
+    <ProjectReference Include="..\..\ReadModel\ReadModel.Facade.Contract\ReadModel.Facade.Contract.csproj" />
+    <ProjectReference Include="..\..\ReadModel\ReadModel.Facade\ReadModel.Facade.csproj" />
+    <ProjectReference Include="..\..\ReadModel\ReadModel.Infrastructure\ReadModel.Infrastructure.csproj" />
 
     <ProjectReference Include="..\..\WriteModel\ContactContext.Application\ContactContext.Application.csproj" />
     <ProjectReference Include="..\..\WriteModel\Application\ContactContext.Domain.Service\ContactContext.Domain.Service.csproj" />
