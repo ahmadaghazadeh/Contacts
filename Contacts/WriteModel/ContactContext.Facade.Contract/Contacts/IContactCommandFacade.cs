@@ -8,5 +8,7 @@ namespace ContactContext.Facade.Contract.Contacts
     {
         Task CreateContact(CreateContactCommand command);
 
+        Task DeleteContact(DeleteContactCommand command);
+
     }
 }

@@ -16,5 +16,10 @@ namespace ContactContext.Facade.Contacts
         {
             return Mediator.Send(command);
         }
+
+        public Task DeleteContact(DeleteContactCommand command)
+        {
+            return Mediator.Send(command);
+        }
     }
 }

@@ -23,6 +23,13 @@ namespace API.Controllers
             return Ok();
         }
 
-       
+        [HttpDelete("{lastName}/{firstName}")]
+        public async Task<IActionResult> DeleteContact(string lastName, string firstName)
+        {
+            var command = new DeleteContactCommand { LastName = lastName, FirstName= firstName };
+            await _contactCommandFacade.DeleteContact(command);
+            return Ok();
+        }
+
     }
 }

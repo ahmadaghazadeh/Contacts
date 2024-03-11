@@ -9,6 +9,9 @@ namespace ContactContext.Domain.Contacts.Services
 
         Contact GetById(Guid id);
 
+        // This thing doesn't correct in the real business.
+        Contact GeFirstNameLastName(string firstName, string lastName);
+
         void Delete(Contact contact);
 
         bool Any(Expression<Func<Contact, bool>> predicate);

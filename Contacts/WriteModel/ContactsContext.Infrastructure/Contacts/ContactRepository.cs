@@ -26,6 +26,13 @@ namespace ContactsContext.Infrastructure.Contacts
             return customer;
         }
 
+        public Contact GeFirstNameLastName(string firstName, string lastName)
+        {
+            var customer = Set
+                .Single(inc => inc.FirstName == firstName && inc.LastName==lastName);
+            return customer;
+        }
+
         public void Delete(Contact contact)
         {
             base.Delete(contact);
