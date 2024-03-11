@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using System.Net;
 using System.Text.Json;
 using ContactContext.Acceptance.Test.Drivers;
+using ContactContext.Acceptance.Test.Models;
 
 namespace ContactContext.Acceptance.Test.StepDefinitions
 {
@@ -41,6 +42,9 @@ namespace ContactContext.Acceptance.Test.StepDefinitions
 			Assert.AreEqual(statusCode, (int)HttpStatusCode.OK);
 		}
 
+
+		
+
 		[Then(@"should have my Contact with following")]
 		public void ThenShouldHaveMyContactWithFollowing(string contactJson)
 		{
@@ -52,6 +56,23 @@ namespace ContactContext.Acceptance.Test.StepDefinitions
 			Assert.IsTrue(contact.Phones.Any(c => c.Number == contact.Phones[0].Number));
 			Assert.IsTrue(contact.Phones.Any(c => c.Number == contact.Phones[1].Number));
 		}
+
+
+		[Then(@"status code should be BadRequest")]
+		public void ThenStatusCodeShouldBeBadRequest()
+		{
+			response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
+		}
+
+		[Then(@"the error message should be ""([^""]*)""")]
+		public async Task ThenTheErrorMessageShouldBeAsync(string expectedMessage)
+		{
+			var content = await response.Content.ReadAsStringAsync();
+			var myClass = JsonSerializer.Deserialize<MyException>(content);
+
+			Assert.AreEqual(expectedMessage, myClass.Message);
+		}
+
 
 	}
 }

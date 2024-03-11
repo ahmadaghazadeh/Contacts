@@ -28,7 +28,8 @@ namespace API
 
 
             var app = builder.Build();
-            if (app.Environment.IsDevelopment())
+            app.UseMiddleware<CustomExceptionHandlerMiddleware>();
+			if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();

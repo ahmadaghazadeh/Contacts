@@ -128,6 +128,41 @@ testRunner.And("should have my Contact with following", "{\r\n\t\t\"FirstName\":
             }
             this.ScenarioCleanup();
         }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Creating a new Contact with Invalid PhoneNumber")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ContactManager")]
+        public void CreatingANewContactWithInvalidPhoneNumber()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Creating a new Contact with Invalid PhoneNumber", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 44
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 45
+testRunner.Given("a customer with the following details:", "{\r\n\t\t\"FirstName\":\"Ahmad\",\r\n\t\t\"LastName\":\"Aghazadeh\",\r\n\t\t\"Phones\":\r\n\t\t[\r\n\t\t\t{\r\n\t\t\t" +
+                        "\t\"Type\":\"Mobile\",\r\n\t\t\t\t\"Number\":\"093521\"\r\n\t\t\t}\r\n\t\t]\r\n\t\t}", ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 59
+testRunner.When("send a request to create the Contact", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 60
+testRunner.Then("status code should be BadRequest", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 61
+testRunner.And("the error message should be \"Phone Number Invalid Format Exception\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore
