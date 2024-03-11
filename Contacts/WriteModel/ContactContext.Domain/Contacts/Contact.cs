@@ -11,7 +11,7 @@ namespace ContactContext.Domain.Contacts
             IFirstNameLastNameDuplicationChecker firstNameLastNameDuplicationChecker,
             string firstName,
             string lastName,
-            List<string> phones)
+            List<string> phones) : base(Guid.NewGuid())
         {
 
             if (firstNameLastNameDuplicationChecker.IsDuplicate(firstName, lastName))
@@ -43,7 +43,7 @@ namespace ContactContext.Domain.Contacts
             this.LastName = lastName;
         }
 
-        private void SetPhones(IPhoneNumberFormatChecker checker,List<string> phones)
+        public void SetPhones(IPhoneNumberFormatChecker checker,List<string> phones)
         {
             foreach (var phone in phones)
             {

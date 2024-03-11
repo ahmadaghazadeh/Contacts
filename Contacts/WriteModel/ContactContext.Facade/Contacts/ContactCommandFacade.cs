@@ -1,5 +1,6 @@
 ﻿using ContactContext.Application.Contract.Contacts;
 using ContactContext.Facade.Contract.Contacts;
+using CustomerContext.Application.Contract.Customers;
 using Framework.Facade;
 using MediatR;
 
@@ -18,6 +19,11 @@ namespace ContactContext.Facade.Contacts
         }
 
         public Task DeleteContact(DeleteContactCommand command)
+        {
+            return Mediator.Send(command);
+        }
+
+        public Task UpdateContact(UpdateContactCommand command)
         {
             return Mediator.Send(command);
         }

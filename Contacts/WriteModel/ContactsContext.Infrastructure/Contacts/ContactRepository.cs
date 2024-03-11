@@ -25,7 +25,7 @@ namespace ContactsContext.Infrastructure.Contacts
                 .Single(inc => inc.Id == id);
             return customer;
         }
-
+        // This thing doesn't correct in the real business.
         public Contact GeFirstNameLastName(string firstName, string lastName)
         {
             var customer = Set

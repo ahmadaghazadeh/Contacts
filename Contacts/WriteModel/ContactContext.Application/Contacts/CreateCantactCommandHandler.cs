@@ -22,14 +22,14 @@ namespace ContactContext.Application.Contacts
         }
         public Task Handle(CreateContactCommand request, CancellationToken cancellationToken)
         {
-            var customer = new Contact(
+            var contact = new Contact(
                 phoneNumberChecker,
                 firstNameLastNameDuplicationChecker,
                 request.FirstName,
                 request.LastName,
                 request.Phones) ;
 
-            contactRepository.Create(customer);
+            contactRepository.Create(contact);
 
             return Task.CompletedTask;
         }
