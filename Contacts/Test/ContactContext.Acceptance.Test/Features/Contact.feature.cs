@@ -121,9 +121,9 @@ testRunner.When("send a request to create the Contact", ((string)(null)), ((Tech
 testRunner.Then("status code should be \'200\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 24
-testRunner.And("should have my Contact with following", "{\r\n\t\t\"FirstName\":\"Ahmad\",\r\n\t\t\"LastName\":\"Aghazadeh\",\r\n\t\t\"Phones\":\r\n\t\t[\r\n\t\t\t{\r\n\t\t\t" +
-                        "\t\"Type\":\"Mobile\",\r\n\t\t\t\t\"Number\":\"09352185069\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"Type\":\"Mobile\"," +
-                        "\r\n\t\t\t\t\"Number\":\"09352185069\"\r\n\t\t\t}\r\n\t\t]\r\n\t\t}", ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("should have my Contact with following", "{\r\n\t\t\"FirstName\":\"Ahmad\",\r\n\t\t\"LastName\":\"Aghazadeh\",\r\n\t\t\"Phones\":\r\n\t\t[\r\n\t\t\t\t{\r\n\t\t" +
+                        "\t\t\t\"Type\":\"Mobile\",\r\n\t\t\t\t\t\"Number\":\"09352185069\"\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"Type\":\"Mo" +
+                        "bile\",\r\n\t\t\t\t\t\"Number\":\"09352185059\"\r\n\t\t\t\t}\r\n\t\t]\r\n\t\t}", ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -159,6 +159,169 @@ testRunner.Then("status code should be BadRequest", ((string)(null)), ((TechTalk
 #line hidden
 #line 61
 testRunner.And("the error message should be \"Phone Number Invalid Format Exception\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Update a Contact Successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ContactManager")]
+        public void UpdateAContactSuccessfully()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Update a Contact Successfully", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 65
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 66
+testRunner.Given("Have a Contact with the following details:", "\t\t{\r\n\t\t\"FirstName\":\"Ahmad\",\r\n\t\t\"LastName\":\"Aghazadeh\",\r\n\t\t\"Phones\":\r\n\t\t\t[\r\n\t\t\t\t{\r" +
+                        "\n\t\t\t\t\t\"Type\":\"Mobile\",\r\n\t\t\t\t\t\"Number\":\"09352185069\"\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"Type\":" +
+                        "\"Mobile\",\r\n\t\t\t\t\t\"Number\":\"09352185059\"\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}", ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 84
+testRunner.And("Prepare the Contact with the following details", "\t\t{\r\n\t\t\"FirstName\":\"Ahmad\",\r\n\t\t\"LastName\":\"Aghazadeh\",\r\n\t\t\"Phones\":\r\n\t\t\t[\r\n\t\t\t\t{\r" +
+                        "\n\t\t\t\t\t\"Type\":\"Mobile\",\r\n\t\t\t\t\t\"Number\":\"09352185070\"\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"Type\":" +
+                        "\"Mobile\",\r\n\t\t\t\t\t\"Number\":\"09352185055\"\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}", ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 102
+testRunner.When("send a request update the Contact", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 103
+testRunner.Then("status code should be \'200\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 104
+testRunner.And("should have my Contact with following", "{\r\n\t\t\"FirstName\":\"Ahmad\",\r\n\t\t\"LastName\":\"Aghazadeh\",\r\n\t\t\"Phones\":\r\n\t\t[\r\n\t\t\t{\r\n\t\t\t" +
+                        "\t\"Type\":\"Mobile\",\r\n\t\t\t\t\"Number\":\"09352185070\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"Type\":\"Mobile\"," +
+                        "\r\n\t\t\t\t\"Number\":\"09352185055\"\r\n\t\t\t}\r\n\t\t]\r\n\t\t}", ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Delete a Contact Successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ContactManager")]
+        public void DeleteAContactSuccessfully()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete a Contact Successfully", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 126
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 127
+testRunner.Given("Have a Contact with the following details:", "\t\t{\r\n\t\t\"FirstName\":\"Ahmad\",\r\n\t\t\"LastName\":\"Aghazadeh\",\r\n\t\t\"Phones\":\r\n\t\t\t[\r\n\t\t\t\t{\r" +
+                        "\n\t\t\t\t\t\"Type\":\"Mobile\",\r\n\t\t\t\t\t\"Number\":\"09352185069\"\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"Type\":" +
+                        "\"Mobile\",\r\n\t\t\t\t\t\"Number\":\"09352185059\"\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t}", ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 145
+testRunner.When("send a request to delete the Contact with firstName \"Ahmad\" and lastName \"Aghazad" +
+                        "eh\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 146
+testRunner.Then("status code should be \'200\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 147
+testRunner.And("should dont find the Contact with firstName \"Ahmad\" and lastName \"Aghazadeh\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get Two Contacts Successfully")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ContactManager")]
+        public void GetTwoContactsSuccessfully()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get Two Contacts Successfully", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 151
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 152
+testRunner.Given("Have several Contacts with the following details:", @"  [{
+	""FirstName"":""Ahmad"",
+	""LastName"":""Aghazadeh"",
+	""Phones"":
+		[
+			{
+				""Type"":""Mobile"",
+				""Number"":""09352185069""
+			},
+			{
+				""Type"":""Mobile"",
+				""Number"":""09352185059""
+			}
+		]
+	},
+	{
+	""FirstName"":""Arad"",
+	""LastName"":""Aghazadeh"",
+	""Phones"":
+		[
+			{
+				""Type"":""Mobile"",
+				""Number"":""09303977077""
+			} 
+		]
+	}
+	]", ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 182
+testRunner.When("send several requests to create the Contacts", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 183
+testRunner.Then("should have Contacts with following", @"  [{
+	""FirstName"":""Ahmad"",
+	""LastName"":""Aghazadeh"",
+	""Phones"":
+		[
+			{
+				""Type"":""Mobile"",
+				""Number"":""09352185069""
+			},
+			{
+				""Type"":""Mobile"",
+				""Number"":""09352185059""
+			}
+		]
+	},
+	{
+	""FirstName"":""Arad"",
+	""LastName"":""Aghazadeh"",
+	""Phones"":
+		[
+			{
+				""Type"":""Mobile"",
+				""Number"":""09303977077""
+			} 
+		]
+	}
+	]", ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
